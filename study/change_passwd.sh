@@ -39,4 +39,3 @@ for i in "${HOSTNAME[@]}"; do
     echo "${i} cannot be reached"
   fi
 done
-

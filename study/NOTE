@@ -1,0 +1,10 @@
+# DO NOT run this script as it's just a note from personal study
+
+A subshell - running a command inside bash script and assigning thee output of the command to a variable
+var-$(cmd)
+echo $var
+
+current_path=$(pwd)
+echo $current_path
+
+
