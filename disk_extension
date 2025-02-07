@@ -1,0 +1,9 @@
+#!/bin/bash
+# Script to find 500GB additional disk and extend to root volume.
+added_disk=$(lsblk | grep 500G | awk '{print $1}') && echo $added_disk
+new_disk="/dev/$added_disk" && echo $new_disk
+pvcreate $new_disk
+vgextend ol $new_disk
+lvextend /dev/mapper/ol-root -l+100%FREE
+xfs_growfs /dev/mapper/ol-root
+df -h
